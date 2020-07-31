@@ -40,20 +40,22 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <h1>Super Heroes App</h1>
-        <div className="container">
-          <div className="input-group mb-3">
-            <input
-              type="text"
-              placeholder="Ingresar nombre super heroe"
-              className="form-control"
-              value={this.state.searchName}
-              onChange={this.handleSearchNameChange}
-            />
+      <div className="App bg-secondary">
+        <div className="bg-light pt-5 pb-3">
+          <h1 className="pb-5 text-info">Super Heroes App</h1>
+          <div className="container">
+            <div className="input-group mb-4">
+              <input
+                type="text"
+                placeholder="Ingresar nombre super heroe"
+                className="form-control"
+                value={this.state.searchName}
+                onChange={this.handleSearchNameChange}
+              />
+            </div>
           </div>
         </div>
-        <div className="container d-flex flex-wrap justify-content-center">
+        <div className="container d-flex flex-wrap justify-content-center pt-5">
           {this.state.loading && <Spinner />}
           {this.state.heroes.map(heroe => {
             return (
